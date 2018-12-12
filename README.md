@@ -3,3 +3,4 @@
 
 - SPUtil
 - DimensUtil
+- AppUtil
