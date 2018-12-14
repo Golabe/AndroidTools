@@ -1,12 +1,14 @@
 package com.github.golabe.androidtools.tools;
 
 import android.app.Activity;
+import android.app.ActivityManager;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.net.Uri;
+import android.os.Build;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -82,6 +84,7 @@ public class AppUtil {
 
     /**
      * 获取除系统应用之外的所有APP
+     *
      * @return
      */
     public List<PackageInfo> getInstalledPackages() {
@@ -94,6 +97,22 @@ public class AppUtil {
             }
         }
         return packageInfoList;
+    }
+
+    /**
+     * 获取最大内存
+     *
+     * @return
+     */
+    public Long getMaxMemory() {
+        return Runtime.getRuntime().maxMemory() / 1024;
+    }
+    /**
+     * 获取手机系统版本号
+     * @return
+     */
+    public int getSdkVersion() {
+        return Build.VERSION.SDK_INT;
     }
 
     private PackageManager getPackageManager() {

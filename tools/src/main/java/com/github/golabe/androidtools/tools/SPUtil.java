@@ -80,13 +80,13 @@ public class SPUtil {
 
     public void clear() {
         if (editor != null) {
-            editor.clear();
+            editor.clear().apply();
         }
     }
 
     public void remove(String name) {
         if (editor != null) {
-            editor.remove(name);
+            editor.remove(name).apply();
         }
     }
 }
